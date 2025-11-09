@@ -42,7 +42,8 @@ rmcd() {
 }
 
 # skim setup
-export SKIM_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" 2>dev/null'
+export SKIM_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+export SKIM_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="λ "'
 
 source /usr/share/skim/key-bindings.zsh
