@@ -9,8 +9,9 @@ eval $(oh-my-posh init zsh --config "~/.config/zsh/plugins/oh-my-posh/zen.toml")
 bindkey -v
 export KEYTIMEOUT=1
 
+
 if [[ -z $TMUX ]]; then
-    bindkey -s "^S" "tmux-session.sh\n"
+    bindkey -s "^F" "tmux-session.sh\n"
 fi
 
 # User configuration
