@@ -10,7 +10,7 @@ bindkey -v
 export KEYTIMEOUT=1
 
 if [[ -z $TMUX ]]; then
-    bindkey -s "^F" "tmux-session.sh\n"
+    bindkey -s "^S" "tmux-session.sh\n"
 fi
 
 # User configuration
