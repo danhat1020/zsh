@@ -51,9 +51,9 @@ if [[ -r /usr/share/skim/completion.zsh ]]; then
   source /usr/share/skim/completion.zsh
 fi
 
-export SKIM_DEFAULT_COMMAND='fd . --type f --type d --hidden --follow --exclude .git ~'
-export SKIM_CTRL_T_COMMAND='fd . --type f --hidden --follow --exclude .git ~'
-export SKIM_ALT_C_COMMAND='fd . --type d --hidden --follow --exclude .git ~'
+export SKIM_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
+export SKIM_CTRL_T_COMMAND='fd  --type f --hidden --follow --exclude .git'
+export SKIM_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="λ "'
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
