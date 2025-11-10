@@ -42,11 +42,19 @@ rmcd() {
 }
 
 # skim setup
-export SKIM_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
-export SKIM_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
-export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="λ "'
+if [[ -r /usr/share/skim/key-bindings.zsh ]]; then
+  source /usr/share/skim/key-bindings.zsh
+fi
 
-source /usr/share/skim/key-bindings.zsh
+if [[ -r /usr/share/skim/completion.zsh ]]; then
+  source /usr/share/skim/completion.zsh
+fi
+
+FILE_PREFIX="~/"
+export SKIM_DEFAULT_COMMAND='fd . --type f --type d --hidden --follow --exclude .git ~ | sed "s|^$HOME/|$FILE_PREFIX|"'
+export SKIM_CTRL_T_COMMAND='fd . --type f --hidden --follow --exclude .git ~ | sed "s|^$HOME/|$FILE_PREFIX|"'
+export SKIM_ALT_C_COMMAND='fd . --type d --hidden --follow --exclude .git ~ | sed "s|^$HOME/|$FILE_PREFIX|"'
+export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="λ "'
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
