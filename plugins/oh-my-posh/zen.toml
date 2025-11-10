@@ -6,55 +6,50 @@ final_space = true
 type = "prompt"
 alignment = "left"
 newline = true
-
-  [[blocks.segments]]
-  type = "git"
-  style = "diamond"
-  leading_diamond = ""
-  trailing_diamond = "\ue0bc"
-  background = "p:blue"
-  foreground = "transparent"
-  template = " <b>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}</b>"
-
-    [blocks.segments.properties]
-    fetch_status = true
-
-  [[blocks.segments]]
-  type = "git"
-  style = "plain"
-  force = true
-  background = "transparent"
-  foreground = "p:blue"
-  template = " "
   
   [[blocks.segments]]
   type = "path"
   style = "plain"
   background = "transparent"
-  foreground = "p:purple"
-  template = "{{ .Path }} "
+  foreground = "p:white"
+  template = "{{ .Path }}"
 
     [blocks.segments.properties]
     style = "full"
 
   [[blocks.segments]]
+  type = "git"
+  style = "plain"
+  background = "transparent"
+  foreground = "p:grey"
+  template = " git:{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} "
+
+    [blocks.segments.properties]
+    fetch_status = true
+    branch_icon = ""
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+  [[blocks.segments]]
   type = "text"
   style = "plain"
   background = "transparent"
-  foreground = "p:symbol"
+  foreground = "p:white"
   template = "λ"
   
 [secondary_prompt]
 background = "transparent"
-foreground = "p:symbol"
+foreground = "p:white"
 template = "λ "
 
 [transient_prompt]
 background = "transparent"
-foreground = "p:symbol"
+foreground = "p:white"
 template = "λ "
 
 [palette]
-symbol = "#C0C0C0"
-blue = "#606DAD"
-purple = "#A469BA"
+white = "#c0c0c0"
+grey = "#606060"
