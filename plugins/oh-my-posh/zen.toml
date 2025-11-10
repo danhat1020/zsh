@@ -11,8 +11,8 @@ newline = true
   type = "path"
   style = "plain"
   background = "transparent"
-  foreground = "p:white"
-  template = "{{ .Path }}"
+  foreground = "p:purple"
+  template = "{{ .Path }} "
 
     [blocks.segments.properties]
     style = "full"
@@ -22,16 +22,11 @@ newline = true
   style = "plain"
   background = "transparent"
   foreground = "p:grey"
-  template = " git:{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<p:red>*</>{{ end }} "
+  template = "git:{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<p:red>*</>{{ end }} "
 
     [blocks.segments.properties]
     fetch_status = true
     branch_icon = ""
-
-[[blocks]]
-type = "prompt"
-alignment = "left"
-newline = true
 
   [[blocks.segments]]
   type = "text"
@@ -51,6 +46,7 @@ foreground = "p:white"
 template = "λ "
 
 [palette]
-white = "#c0c0c0"
-red = "#d05050"
+white = "#C0C0C0"
+purple = "#B262D2"
+red = "#C95E65"
 grey = "#606060"
