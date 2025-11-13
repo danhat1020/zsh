@@ -15,7 +15,7 @@ newline = true
   template = "{{ .Path }} "
 
     [blocks.segments.properties]
-    style = "full"
+    style = "folder"
 
   [[blocks.segments]]
   type = "git"
