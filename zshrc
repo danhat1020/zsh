@@ -10,8 +10,12 @@ bindkey -v
 export KEYTIMEOUT=1
 
 
-if [[ -z $TMUX ]]; then
-    bindkey -s "^F" "tmux-session.sh\n"
+if [[ -z "$TMUX" ]]; then
+    if tmux has-session -t main 2>/dev/null; then
+        tmux attach -t main
+    else
+        tmux new -s main
+    fi
 fi
 
 # User configuration
