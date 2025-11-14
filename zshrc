@@ -9,6 +9,7 @@ eval $(oh-my-posh init zsh --config "~/.config/zsh/plugins/oh-my-posh/zen.toml")
 bindkey -v
 export KEYTIMEOUT=1
 
+setopt AUTO_CD
 
 if [[ -z "$TMUX" ]]; then
     if tmux has-session -t main 2>/dev/null; then
@@ -30,6 +31,10 @@ alias vim="nvim"
 alias bonsai="cbonsai --live --time=0.015 --infinite --wait=1.00 --leaf=\?,\&,\$ --color=2,130,77,3 --multiplier=8 --life=60"
 alias matrix="cmatrix -bk"
 alias gamma="pkill wl-gammarelay && hyprctl dispatch exec wl-gammarelay"
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 mkcd() {
     if [ -z "$1" ]; then
