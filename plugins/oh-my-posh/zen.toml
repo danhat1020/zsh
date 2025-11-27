@@ -28,11 +28,6 @@ newline = true
     fetch_status = true
     branch_icon = ""
 
-[[blocks]]
-type = "prompt"
-alignment = "left"
-newline = true
-
   [[blocks.segments]]
   type = "text"
   style = "plain"
@@ -47,7 +42,7 @@ template = "λ "
 
 [transient_prompt]
 background = "transparent"
-foreground = "p:white"
+foreground = "p:grey2"
 template = "λ "
 
 [palette]
@@ -55,3 +50,4 @@ white = "#C0C0C0"
 purple = "#B262D2"
 red = "#C95E65"
 grey = "#606060"
+grey2 = "#808080"
