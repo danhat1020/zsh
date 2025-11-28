@@ -1,5 +1,6 @@
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/home/slick/.local/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
