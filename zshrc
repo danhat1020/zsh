@@ -1,6 +1,7 @@
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH="$PATH:/home/slick/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -33,10 +34,6 @@ alias bonsai="cbonsai --live --time=0.015 --infinite --wait=1.00 --leaf=\?,\&,\$
 alias matrix="cmatrix -bk"
 alias gamma="pkill wl-gammarelay && hyprctl dispatch exec wl-gammarelay"
 alias cat="bat"
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 mkcd() {
     if [ -z "$1" ]; then

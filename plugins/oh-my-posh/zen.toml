@@ -28,6 +28,11 @@ newline = true
     fetch_status = true
     branch_icon = ""
 
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
   [[blocks.segments]]
   type = "text"
   style = "plain"
