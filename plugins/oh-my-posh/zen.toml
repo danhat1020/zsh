@@ -11,11 +11,11 @@ newline = true
   type = "path"
   style = "plain"
   background = "transparent"
-  foreground = "p:purple"
+  foreground = "p:grey3"
   template = "{{ .Path }} "
 
     [blocks.segments.properties]
-    style = "folder"
+    style = "full"
 
   [[blocks.segments]]
   type = "git"
@@ -38,21 +38,22 @@ newline = true
   style = "plain"
   background = "transparent"
   foreground = "p:white"
-  template = "λ"
+  template = "$"
+  # λ
   
 [secondary_prompt]
 background = "transparent"
 foreground = "p:white"
-template = "λ "
+template = "$ "
 
 [transient_prompt]
 background = "transparent"
 foreground = "p:grey2"
-template = "λ "
+template = "$ "
 
 [palette]
-white = "#C0C0C0"
-purple = "#B262D2"
+white = "#E0E0E0"
 red = "#C95E65"
 grey = "#606060"
 grey2 = "#808080"
+grey3 = "#A0A0A0"
