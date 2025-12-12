@@ -21,6 +21,8 @@ if [[ -z "$TMUX" ]]; then
     fi
 fi
 
+bindkey -s "^W" "exec zsh\n"
+
 # User configuration
 
 # aliases
@@ -30,10 +32,12 @@ alias tree="eza -a --tree --git-ignore"
 alias showcolor="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/e50a28ec54188d2413518788de6c6367ffcea4f7/print256colours.sh | zsh"
 alias rm="rm -rf"
 alias vim="nvim"
+alias vi="nvim"
 alias bonsai="cbonsai --live --time=0.015 --infinite --wait=1.00 --leaf=\?,\&,\$ --color=2,130,77,3 --multiplier=8 --life=60"
 alias matrix="cmatrix -bk"
 alias gamma="pkill wl-gammarelay && hyprctl dispatch exec wl-gammarelay"
 alias cat="bat"
+alias makecpp="g++ main.cpp -o main -lraylib && ./main"
 
 mkcd() {
     if [ -z "$1" ]; then
@@ -62,7 +66,7 @@ fi
 export SKIM_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export SKIM_CTRL_T_COMMAND='fd  --type f --hidden --follow --exclude .git'
 export SKIM_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
-export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="λ "'
+export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="$ "'
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

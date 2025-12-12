@@ -11,7 +11,7 @@ newline = true
   type = "path"
   style = "plain"
   background = "transparent"
-  foreground = "p:grey3"
+  foreground = "p:purple"
   template = "{{ .Path }} "
 
     [blocks.segments.properties]
@@ -53,7 +53,7 @@ template = "$ "
 
 [palette]
 white = "#E0E0E0"
+purple = "#A475C3"
 red = "#C95E65"
 grey = "#606060"
 grey2 = "#808080"
-grey3 = "#A0A0A0"
