@@ -9,20 +9,22 @@ newline = true
   
   [[blocks.segments]]
   type = "path"
-  style = "plain"
-  background = "transparent"
-  foreground = "p:purple"
-  template = "{{ .Path }} "
+  style = "diamond"
+  trailing_diamond = "\ue0b0"
+  background = "p:bg"
+  foreground = "p:path"
+  template = " {{ .Path }} "
 
     [blocks.segments.properties]
     style = "full"
 
   [[blocks.segments]]
   type = "git"
-  style = "plain"
-  background = "transparent"
-  foreground = "p:grey"
-  template = "git:{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<p:red>*</>{{ end }} "
+  style = "diamond"
+  trailing_diamond = "\ue0b0"
+  background = "p:bg2"
+  foreground = "p:git"
+  template = " git:{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<p:red>*</>{{ end }} "
 
     [blocks.segments.properties]
     fetch_status = true
@@ -37,23 +39,26 @@ newline = true
   type = "text"
   style = "plain"
   background = "transparent"
-  foreground = "p:white"
-  template = "$"
+  foreground = "p:prompt"
+  template = "λ"
   # λ
   
 [secondary_prompt]
 background = "transparent"
-foreground = "p:white"
-template = "$ "
+foreground = "p:prompt"
+template = "λ "
 
 [transient_prompt]
 background = "transparent"
-foreground = "p:grey2"
-template = "$ "
+foreground = "p:transient_prompt"
+template = "λ "
 
 [palette]
-white = "#E0E0E0"
-purple = "#A475C3"
-red = "#C95E65"
-grey = "#606060"
-grey2 = "#808080"
+path = "#B0B0B0"
+git = "#686868"
+red = "#C06065"
+prompt = "#E0E0E0"
+transient_prompt = "#808080"
+bg = "#202020"
+bg2 = "#141414"
+bg3 = "#282828"
