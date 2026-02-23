@@ -15,27 +15,25 @@ if [[ -z "$TMUX" ]]; then
     fi
 fi
 # aliases
-alias ls="ls -A -1 --color=auto --group-directories-first --ignore='.git'"
+alias ls="ls -A --color=auto --group-directories-first --ignore='.git'"
 alias tree="eza -a --tree --git-ignore"
-alias rm="rm -rf"
-alias vim="nvim"
 alias gamma="pkill wl-gammarelay && hyprctl dispatch exec wl-gammarelay"
+alias hotspot='nmcli connection up "slick’s iPhone"'
 # skim setup
 if [[ -r /usr/share/skim/key-bindings.zsh ]]; then
-  source /usr/share/skim/key-bindings.zsh
+	source /usr/share/skim/key-bindings.zsh
 fi
 if [[ -r /usr/share/skim/completion.zsh ]]; then
-  source /usr/share/skim/completion.zsh
+	source /usr/share/skim/completion.zsh
 fi
 export SKIM_DEFAULT_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export SKIM_CTRL_T_COMMAND='fd  --type f --hidden --follow --exclude .git'
 export SKIM_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export SKIM_DEFAULT_OPTIONS='--color bw --ansi --reverse --prompt="$ "'
 PATH_COL="#B0B0B0"
-GIT="#404040"
-RED="#C06065"
-SYMBOL="#808080"
-TRANSIENT="#808080"
+GIT="#505050"
+RED="#B07070"
+SYMBOL="#909090"
 setopt PROMPT_SUBST
 # git segment
 prompt_git() {
@@ -47,9 +45,9 @@ prompt_git() {
         || git rev-parse --short HEAD 2>/dev/null)
   # Show red * if there are local changes
   if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
-    dirty="%F{$RED}*%f"
+	  dirty="%F{$RED}*%f"
   fi
-  print -n "%F{$GIT} [git:${branch}]${dirty}%f "
+  print -n "%F{$GIT} git:${branch}${dirty}%f"
 }
 # prompt
-PROMPT=$'%F{$PATH_COL}${${(%):-%~}%/}%f$(prompt_git)%F{$SYMBOL}\n$%f '
+PROMPT=$'%F{$PATH_COL}%~%f$(prompt_git)%F{$SYMBOL}\n$%f '
